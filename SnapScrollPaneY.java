@@ -12,6 +12,12 @@ public class SnapScrollPaneY extends ScrollPane {
     public Actor focusedActor;
     public boolean hasSnapRunnables;
     public Array<RunnableAction> runWhenActorNotSnappedOn, runWhenActorSnappedOn;
+    
+    /**
+     * @param table
+     * Snap scrollPane needs a table, every element in the table must be equal in size.
+     * ScrollPane snaps based off the tables children amount, 4 actors means 1/4f = .25f each actor.
+     */
     public SnapScrollPaneY(Table table) {
         super(table);
         this.table = table;
@@ -20,6 +26,12 @@ public class SnapScrollPaneY extends ScrollPane {
         runWhenActorSnappedOn = new Array<>();
         setup();
     }
+    
+    /**
+     * @param table
+     * Snap scrollPane needs a table, every element in the table must be equal in size.
+     * ScrollPane snaps based off the tables children amount, 4 actors means 1/4f = .25f each actor.
+     */
     public SnapScrollPaneY(Table table, Skin skin) {
         super(table, skin);
         this.table = table;
